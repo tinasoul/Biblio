@@ -1,0 +1,24 @@
+<h1>Index</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>ISBN</th>
+    <th>Rating</th>
+    <th>Review</th>
+  </tr>
+
+<% @librarys.each do |library| %>
+  <tr>
+    <td><%= library.title %></td>
+    <td><%= "#{library.author_first_name} #{library.author_last_name}" %></td>
+    <td><%= library.ISBN %></td>
+    <td><%= library.rating %></td>
+    <td><%= library.review %></td>
+  </tr>
+<% end %>
+</table>
+
+<br/>
+
