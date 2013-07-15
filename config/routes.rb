@@ -1,6 +1,9 @@
 Biblio::Application.routes.draw do
 
-  resources :libraries
+  get '/' => 'books#index'
+  # root to: => 'books#index'
+  resources :books
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
