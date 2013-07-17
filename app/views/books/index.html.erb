@@ -1,7 +1,8 @@
-<h1>Listing books</h1>
+<h1>Books</h1>
 
 <table>
   <tr>
+    <th>Pic</th>
     <th>Title</th>
     <th>Author first name</th>
     <th>Author last name</th>
@@ -15,6 +16,7 @@
 
 <% @books.each do |book| %>
   <tr>
+    <td width="50px"><%=image_tag(book.picture_url) if book.picture.present?%></td>
     <td><%= book.title %></td>
     <td><%= book.author_first_name %></td>
     <td><%= book.author_last_name %></td>
