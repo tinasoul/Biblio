@@ -51,6 +51,13 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    goodreads (0.2.2)
+      activesupport (~> 3)
+      hashie (~> 2.0)
+      i18n (~> 0.5)
+      oauth (~> 0.4)
+      rest-client (~> 1.6)
+    hashie (2.0.5)
     hike (1.2.3)
     hirb (0.7.1)
     i18n (0.6.1)
@@ -64,6 +71,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.23)
     multi_json (1.7.7)
+    oauth (0.4.7)
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -90,6 +98,8 @@ GEM
     rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     sass (3.2.9)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -119,6 +129,7 @@ DEPENDENCIES
   binding_of_caller
   carrierwave
   coffee-rails (~> 3.2.1)
+  goodreads
   hirb
   jquery-rails
   rails (= 3.2.13)
