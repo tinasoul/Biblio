@@ -41,6 +41,14 @@ class BooksController < ApplicationController
   # POST /books.json
   def create
     @book = Book.new(params[:book])
+    client = Goodreads.new
+    book_info = client.book_by_isbn(params[:book][:isbn])
+    @book.title = book_info.title if @book.title.blank? 
+    @book.author = book_info.author if @book.author.blank?
+    search.results.work.each do |book|
+      book.id        # => book id
+      book.title     # => book title
+    end
 
     respond_to do |format|
       if @book.save
@@ -57,6 +65,10 @@ class BooksController < ApplicationController
   # PUT /books/1.json
   def update
     @book = Book.find(params[:id])
+    @book.attributes = params[:book]
+    client = Goodreads.new
+    book_info = client.book_by_isbn(params[:book][:isbn])
+    @book.title = book_info.title if @book.title.blank?
 
     respond_to do |format|
       if @book.update_attributes(params[:book])
